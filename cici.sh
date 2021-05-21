@@ -1,6 +1,13 @@
 #!/bin/bash
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+cat >> FILE.txt <<EOF
+deb http://deb.anydesk.com/ all main
+EOF
+
 apt-get update
 apt-get upgrade -y
+
+sudo apt install anydesk
 
 apt-get install xserver-xorg-video-dummy
 echo 
